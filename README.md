@@ -1,6 +1,6 @@
 # robot-dev
 
-**robot-dev** provides clean, ready-to-use development environments tailored for robotics, computer vision.
+**robot-dev** offers ready-to-use Docker images for robotics and computer vision development.
 
 ## Available Tags
 
