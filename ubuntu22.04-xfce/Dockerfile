@@ -2,14 +2,12 @@ FROM lnfu/robot-dev:ubuntu22.04
 
 # VNC + Xfce
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     xfce4 \
     xfce4-goodies \
     tigervnc-standalone-server \
-    tigervnc-common && \
-    apt-get autoclean -y && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+    tigervnc-common \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install noVNC + websockify
 RUN git clone https://github.com/novnc/noVNC.git -b v1.6.0 /opt/noVNC && \
